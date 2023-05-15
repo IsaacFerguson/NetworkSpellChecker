@@ -1,0 +1,34 @@
+Program design:
+	This Program has two components the first is the client the other is the server. The server is the
+	driving factor behind the code. The servers job is to connect and sort clients into threads that 
+	allow the clients to use the networked spellchecker. The server also stores a log of all the data 
+	being sent to clients. The client simply conntects to the server and sends words to be checked.
+
+Testing, Results, Debugging:
+	besides syntactical errors I had some trouble with the mutex and cond vari. I was a little confused
+	on how they work and had some problems with calling the wrong lock or vari but eventaully they all 
+	worked. The other problems I had were around the log file and the spell checker. All of the threads
+	were created and worked properly but the writing to the log file and checking of words has issues. 
+	The log file would recive the correct info but would not write it to the log file. For the spellchecker
+	the loop i wrote seemed to go over every word but would only work on certain words. The words that worked
+	seemed to be shorter words.
+
+		Words that worked:
+			yes
+			hail
+			happy
+			hello
+			no
+			pipe
+			lire
+			dire
+		Words that did not work:
+			computer
+			superstar
+			eighteenth
+			elegantly
+
+Discussion and Analysis:
+	Overall this project had some hard new concepts but if I had been better with time mangement I could have turned 
+	this in working and on time. Due to running out of time i never switched the FIFO queue for the socket buffer
+	to a priority queue.
